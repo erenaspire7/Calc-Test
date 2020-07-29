@@ -4,7 +4,10 @@ pipeline {
     agent any
     stages {
         stage('install pytest') {
-            sh 'pip install pytest'   
+            steps {
+                sh 'pip install pytest'   
+            }
+            
         }
         stage('fetch') {
             steps {
