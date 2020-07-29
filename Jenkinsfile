@@ -1,9 +1,14 @@
 pipeline {
     agent any
     stages {
+        stage('fetch') {
+            steps {
+                sh 'git clone https://github.com/erenaspire7/Calc-Test.git'
+            }
+        }
         stage('test') {
             steps {
-                sh 'python -m pytest test_calculator.py '
+                sh 'python3 -m pytest test_calculator.py '
             }
         }
     }
@@ -13,6 +18,9 @@ pipeline {
         }
         unsuccessful {
             echo 'Job execution status is failed, please check error logs'
+        }
+        cleanup {
+            sh 'rm -rf Calc-Test'
         }
     }
 }
