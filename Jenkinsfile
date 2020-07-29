@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('fetch') {
-            steps {
-                sh 'git clone https://github.com/erenaspire7/Calc-Test.git'
-            }
-        }
         stage('test') {
             steps {
                 sh 'python -m pytest test_calculator.py '
