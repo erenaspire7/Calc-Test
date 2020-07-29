@@ -1,7 +1,0 @@
-
-2. Build the Continuous Integration pipeline for the Python calculator project:
-a. Use Jenkinsfile for specifying the pipeline
-b. Configure the trigger so that the pipeline runs automatically in case of any commit to the repository
-c. The pipeline doesn't need the Compile step since Python is an interpretable language
-d. Run the pipeline and observe the results
-e. Try to commit the code that breaks each stage of the pipeline and observe how it is visualized in Jenkins
