@@ -3,6 +3,9 @@ properties([pipelineTriggers([githubPush()])])
 pipeline {
     agent any
     stages {
+        stage('install pytest') {
+            sh 'pip install pytest'   
+        }
         stage('fetch') {
             steps {
                 sh 'git clone https://github.com/erenaspire7/Calc-Test.git'
