@@ -1,7 +1,10 @@
 properties([pipelineTriggers([githubPush()])])
 
 pipeline {
-    agent any
+    agent {
+        any
+        args '-u root'
+    }
     stages {
         stage('fetch') {
             steps {
