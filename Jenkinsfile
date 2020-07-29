@@ -6,11 +6,6 @@ pipeline {
                 sh 'git clone https://github.com/erenaspire7/Calc-Test.git'
             }
         }
-        stage('run') {
-            steps {
-                sh 'python calculator.py'
-            }
-        }
         stage('test') {
             steps {
                 sh 'python -m pytest test_calculator.py '
